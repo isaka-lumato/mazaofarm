@@ -219,8 +219,8 @@
         var percent = el.data("percent");
         $(el).css("width", percent).addClass("counted");
       }, {
-        accY: -50
-      }
+      accY: -50
+    }
     );
   }
 
@@ -233,8 +233,8 @@
           $(this).css("width", progressWidth + "%");
         });
       }, {
-        accY: 0
-      }
+      accY: 0
+    }
     );
   }
 
@@ -264,8 +264,8 @@
           });
         }
       }, {
-        accY: 0
-      }
+      accY: 0
+    }
     );
   }
 
@@ -305,8 +305,8 @@
       var target = $(this).attr("data-target");
       // animate
       $("html, body").animate({
-          scrollTop: $(target).offset().top
-        },
+        scrollTop: $(target).offset().top
+      },
         1000
       );
 
@@ -578,8 +578,8 @@
     if ($(this).next().val() > 1) {
       if ($(this).next().val() > 1)
         $(this)
-        .next()
-        .val(+$(this).next().val() - 1);
+          .next()
+          .val(+$(this).next().val() - 1);
     }
   });
 
@@ -805,8 +805,8 @@
         $("html, body")
           .stop()
           .animate({
-              scrollTop: $(target.attr("href")).offset().top - headerH + "px"
-            },
+            scrollTop: $(target.attr("href")).offset().top - headerH + "px"
+          },
             1200,
             "easeInOutExpo"
           );
@@ -1024,5 +1024,18 @@
   if ($('select:not(.ignore)').length) {
     $('select:not(.ignore)').niceSelect();
   }
+
+  // Close mobile menu when a nav link is clicked, but not on dropdown toggles
+  $('.mobile-nav__content a').on('click', function (e) {
+    // Only close if it's not a dropdown toggle and not a link with children
+    if (!$(this).hasClass('dropdown-toggle') && !$(this).siblings('ul').length) {
+      $('body').removeClass('mobile-nav-visible');
+      $('.mobile-nav__wrapper').removeClass('expanded');
+    } else if ($(this).hasClass('dropdown-toggle')) {
+      // Prevent default for dropdown toggles to allow the dropdown to work
+      e.preventDefault();
+      $(this).parent().toggleClass('expanded').siblings().removeClass('expanded');
+    }
+  });
 
 })(jQuery);
