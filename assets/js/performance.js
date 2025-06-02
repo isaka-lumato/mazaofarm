@@ -32,15 +32,22 @@
         }
 
 
-        // Handle background images
-        const bgImages = document.querySelectorAll('[style*="background-image"]');
-        bgImages.forEach(el => {
-            const bgImage = el.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-            if (bgImage && bgImage[1]) {
+        // Handle background images using data-background
+        const imageLayers = document.querySelectorAll('.image-layer[data-background]');
+        imageLayers.forEach(el => {
+            const bgImageUrl = el.getAttribute('data-background');
+            if (bgImageUrl) {
                 const img = new Image();
-                img.src = bgImage[1];
+                img.src = bgImageUrl;
                 img.onload = function() {
+                    el.style.backgroundImage = 'url(' + bgImageUrl + ')';
                     el.classList.add('loaded');
+                };
+                // Optional: Add error handling for image loading
+                img.onerror = function() {
+                    console.error('Failed to load background image:', bgImageUrl);
+                    // Optionally, set a fallback background or remove the loading indicator
+                    el.classList.add('loaded'); // Still remove blur to avoid permanent blur on error
                 };
             }
         });
