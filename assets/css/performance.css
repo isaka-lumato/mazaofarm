@@ -1,0 +1,91 @@
+/* Performance Optimization Styles */
+
+/* Blur and fade in for images */
+img[loading="lazy"],
+.image-layer {
+  filter: blur(5px);
+  transition: filter 0.3s ease-out;
+  opacity: 0.9;
+}
+
+img.loaded,
+.image-layer.loaded {
+  filter: none;
+  opacity: 1;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.9; }
+  to { opacity: 1; }
+}
+
+/* Critical CSS for above-the-fold content */
+.main-slider, 
+.main-header,
+.main-slider__content {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Optimize rendering performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optimize animations and transitions */
+.animate,
+[class*="wow"] {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/* Optimize images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optimize layout shifts */
+.image-layer,
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Optimize font loading */
+body {
+  font-display: swap;
+}
+
+/* Optimize scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimize image container */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.loading-bg {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
