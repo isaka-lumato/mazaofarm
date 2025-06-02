@@ -4,50 +4,101 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Mazao Farm</title>
-    <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="Agrion HTML 5 Template " />
-
-    <!-- fonts -->
+    <title>Mazao Farm - Quality Agricultural Products</title>
+    <meta name="description" content="Mazao Farm - Your trusted source for high-quality agricultural products. We provide fresh, organic, and sustainable farming solutions." />
+    
+    <!-- Resource hints to speed up page load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
-    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
-    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
-    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
-    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
-    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
-    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Preload key resources -->
+    <link rel="preload" href="assets/images/backgrounds/main-slider-1-1.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/vendors/agrion-icons/fonts/agrion.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="assets/vendors/bootstrap/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="assets/vendors/fontawesome/css/all.min.css" as="style">
+    <link rel="preload" href="assets/css/agrion.css" as="style">
+    <link rel="preload" href="assets/vendors/jquery/jquery-3.6.0.min.js" as="script">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <meta name="theme-color" content="#1a4a0f">
+    
+    <!-- Critical CSS (inlined for above-the-fold content) -->
+    <style>
+        /* Base styles */
+        html{font-size:16px;scroll-behavior:smooth}body{margin:0;padding:0;font-family:'DM Sans',sans-serif;font-weight:400;font-size:1rem;color:#6c757d;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        
+        /* Preloader */
+        .preloader{position:fixed;background-color:#fff;background-position:center center;background-repeat:no-repeat;top:0;left:0;right:0;bottom:0;z-index:99999;display:flex;justify-content:center;align-items:center;text-align:center}.preloader__image{animation:flipInY 2s infinite;width:100px;height:100px;background-image:url(assets/images/5.png);background-size:contain;background-position:center;background-repeat:no-repeat}@keyframes flipInY{from{transform:perspective(400px) rotate3d(0,1,0,90deg);animation-timing-function:ease-in;opacity:0}40%{transform:perspective(400px) rotate3d(0,1,0,-20deg);animation-timing-function:ease-in}60%{transform:perspective(400px) rotate3d(0,1,0,10deg);opacity:1}80%{transform:perspective(400px) rotate3d(0,1,0,-5deg)}to{transform:perspective(400px)}}
+        
+        /* Header */
+        .main-header{position:absolute;top:0;left:0;width:100%;z-index:99;transition:all 500ms ease}.main-header__wrapper{position:relative;display:block;width:100%;transition:all 500ms ease}
+        
+        /* Main slider */
+        .main-slider{position:relative;display:block;width:100%;overflow:hidden;z-index:1}.swiper-slide{position:relative;min-height:100vh;background-size:cover;background-position:center;display:flex;align-items:center}.image-layer{position:absolute;top:0;left:0;right:0;bottom:0;background-size:cover;background-position:center;transform:scale(1);transition:transform 7000ms ease;z-index:-1}.swiper-slide-active .image-layer{transform:scale(1.1)}.main-slider__content{position:relative;padding:80px 0;z-index:2}.main-slider__title{font-size:90px;color:#fff;font-weight:700;line-height:1.1em;margin:0 0 20px;font-family:'Amatic SC',cursive}.main-slider__sub-title{font-size:24px;color:#fff;margin:0 0 30px;font-weight:500}
+        
+        /* Buttons */
+        .thm-btn{display:inline-block;vertical-align:middle;-webkit-appearance:none;appearance:none;border:none;outline:none !important;background-color:#f1cf69;color:#1a4a0f;font-size:16px;font-weight:700;padding:15px 40px 15px;border-radius:30px;transition:all 500ms ease;text-transform:capitalize;text-decoration:none;position:relative;overflow:hidden;z-index:1}.thm-btn:hover{background-color:#1a4a0f;color:#fff}
+        
+        /* Media queries */
+        @media (max-width:1200px){.main-slider__title{font-size:70px}}
+        @media (max-width:991px){.main-slider__title{font-size:60px}.main-slider__sub-title{font-size:20px}}
+        @media (max-width:767px){.main-slider__title{font-size:50px}.main-slider__sub-title{font-size:18px}}
+    </style>
+    
+    <!-- Fonts with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Primary stylesheets -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css">
     <link rel="stylesheet" href="assets/vendors/agrion-icons/style.css">
-    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
-    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
-    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
-    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
-
-    <!-- template styles -->
-    <link rel="stylesheet" href="assets/css/agrion.css" />
-    <link rel="stylesheet" href="assets/css/agrion-responsive.css" />
-    <link rel="stylesheet" href="assets/css/agrion-dark.css" />
-    <link rel="stylesheet" href="assets/css/fixed-home-btn.css" />
+    <link rel="stylesheet" href="assets/css/agrion.css">
+    <link rel="stylesheet" href="assets/css/agrion-responsive.css">
+    <link rel="stylesheet" href="assets/css/agrion-dark.css">
+    
+    <!-- Secondary stylesheets loaded with lower priority -->
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" media="print" onload="this.media='all'">
+    
+    <!-- Fallback for browsers with JavaScript disabled -->
+    <noscript>
+        <link rel="stylesheet" href="assets/vendors/animate/animate.min.css">
+        <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css">
+        <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css">
+        <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css">
+        <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css">
+        <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css">
+        <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css">
+        <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css">
+        <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css">
+        <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css">
+        <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css">
+        <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css">
+        <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css">
+    </noscript>
 </head>
 
 <body class="custom-cursor">
@@ -931,7 +982,7 @@
                             <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                                 <div class="footer-widget__column footer-widget__about">
                                     <div class="footer-widget__logo">
-                                        <a href="index.html"><img src="assets/images/resources/logo-1.png"
+                                        <a href="index.html"><img src="assets/images/resources/logo-1.png" width="122" height="122"
                                                 alt=""></a>
                                     </div>
                                     <div class="footer-widget__about-text-box">
@@ -1089,8 +1140,7 @@
     </div>
     <!-- /.search-popup -->
 
-
-
+    <!-- All scripts loaded in original order with minimal optimization -->
     <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendors/jarallax/jarallax.min.js"></script>
@@ -1115,12 +1165,27 @@
     <script src="assets/vendors/timepicker/timePicker.js"></script>
     <script src="assets/vendors/circleType/jquery.circleType.js"></script>
     <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
-
-
-
-
-    <!-- template js -->
+    
+    <!-- Main template js with proper initialization -->
     <script src="assets/js/agrion.js"></script>
+    
+    <!-- Custom script to hide preloader -->
+    <script>
+        // Hide preloader when everything is loaded
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+        });
+        
+        // Fallback timeout to ensure preloader is hidden
+        setTimeout(function() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader && preloader.style.display !== 'none') {
+                preloader.style.display = 'none';
+            }
+        }, 3000);
+    </script>
 </body>
-
 </html>
