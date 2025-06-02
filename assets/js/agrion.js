@@ -802,6 +802,9 @@
           var headerH = "90";
         }
         var target = $(this);
+        // Close mobile menu when a menu item is clicked
+        $(".mobile-nav__wrapper").removeClass("expanded");
+        $("body").removeClass("locked");
         $("html, body")
           .stop()
           .animate({
