@@ -1,0 +1,37 @@
+/* Floating Home Button Styles */
+.fixed-home-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--agrion-base);
+    color: var(--agrion-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.fixed-home-btn:hover {
+    background-color: var(--agrion-primary);
+    color: var(--agrion-black);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.fixed-home-btn i {
+    font-size: 20px;
+}
+
+@media (max-width: 767px) {
+    .fixed-home-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
